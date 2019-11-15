@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- INDEP CATCHR, OWN CSS -->
+		<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW, NOARCHIVE"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>c</title>
+		<style type="text/css">
+		#crecdiv {
+			display: table;
+			height: 100%;
+			width: 100%;
+		}
+		.bdcomrec {
+			padding:0;
+			margin:0;
+		}
+		</style>
+		<!-- <script  src="http://www.google.com/jsapi"></script> -->
+		<!-- JQ  -->
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+		<!-- BS  -->
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet'/>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js'></script>
+		<script>
+		//
+		//
+		siteSection = "v1_catcher"; // CD specific
+		cd_pgcd = "comrec";
+		ga_cdry='\x55A'+'\x2D'+'11'+'\x321'+'5\x32'+'8'+'\x2D'+'27';
+		window.google_analytics_uacct = ga_cdry;
+		//
+		//
+		///////////////////  QS   //////////////////
+		function sc_qstrng(qs) {
+			this.params = {};
+			if (qs == null) qs = location.search.substring(1, location.search.length);
+			if (qs.length == 0) return;
+			qs = qs.replace(/\+/g, ' ');
+			var args = qs.split('&');
+			for (var i = 0; i < args.length; i++) {
+				var pair = args[i].split('=');
+				var name = decodeURIComponent(pair[0]);
+				var value = (pair.length == 2) ? decodeURIComponent(pair[1]) : name;
+				this.params[name] = value;
+			}
+		}
+		sc_qstrng.prototype.get = function(key, default_) {
+			var value = this.params[key];
+			return (value != null) ? value : default_;
+		}
+		sc_qstrng.prototype.contains = function(key) {
+			var value = this.params[key];
+			return (value != null);
+		}
+		var qs = new sc_qstrng();
+		///////////////////  /QS   //////////////////
+		cd_s = qs.get("s");
+		cd_u = qs.get("u");
+		cd_n = qs.get("n");
+		cd_a = qs.get("a");
+		//
+		//
+		ctData = {
+		///// ctData to be in BOTH btm.js & /c/
+		/// v3
+		"cd_homepage": {
+		"gdf": {
+			"gd": "1FAIpQLSdN_j_QIv941u2xqs8q9Y_CZjI7ecDkJH-IXZZcLHBrRAQl3g",
+			"gd1": "1000004",
+			"gd2": "1000001",
+			"gd3": "1000006"
+		},
+		"gdExtra": "",
+		"dom": "",
+		"prov": "",
+		"mapOn": "",
+		"cse": "",
+		"hdimg": "",
+		"img": "",
+		"name": "www",
+		"tkn": ""
+		},
+		"cd_tor": {
+		"gdf": {
+			"gd": "1FAIpQLSdN_j_QIv941u2xqs8q9Y_CZjI7ecDkJH-IXZZcLHBrRAQl3g",
+			"gd1": "1000004",
+			"gd2": "1000001",
+			"gd3": "1000006"
+		},
+		"gdExtra": "",
+		"dom": "",
+		"prov": "",
+		"mapOn": "",
+		"cse": "",
+		"hdimg": "",
+		"img": "",
+		"name": "Toronto",
+		"tkn": ""
+		},
+		"cd_mon": {
+		"gdf": {
+			"gd": "1FAIpQLSdJhywAwtwTLYqrf0GrW5F3WFtQcUNkoacyUHI7ZaDRSCqDJg",
+			"gd1": "2060941",
+			"gd2": "1000001",
+			"gd3": "1000002"
+		},
+		"gdExtra": "",
+		"dom": "",
+		"prov": "",
+		"mapOn": "",
+		"cse": "",
+		"hdimg": "",
+		"img": "",
+		"name": "Montreal",
+		"tkn": ""
+		},
+		"cd_cal": {
+		"gdf": {
+			"gd": "1FAIpQLSdMe5Z_gW26x7Zl98zQyaTElEl0WHmLH6KuR3J68GzeaRzG2w",
+			"gd1": "2739043",
+			"gd2": "1000001",
+			"gd3": "1000002"
+		},
+		"gdExtra": "",
+		"dom": "",
+		"prov": "",
+		"mapOn": "",
+		"cse": "",
+		"hdimg": "",
+		"img": "",
+		"name": "Calgary",
+		"tkn": ""
+		},
+		"cd_ott": {
+		"gdf": {
+			"gd": "1FAIpQLSeoR2xaO5yRQ8XGr9maDxiF92-k6vRbxbhOSqCJOAfKqpn1BQ",
+			"gd1": "2521538",
+			"gd2": "1000001",
+			"gd3": "1000002"
+		},
+		"gdExtra": "",
+		"dom": "",
+		"prov": "",
+		"mapOn": "",
+		"cse": "",
+		"hdimg": "",
+		"img": "",
+		"name": "Ottawa",
+		"tkn": ""
+		},
+		"cd_edm": {
+		"gdf": {
+			"gd": "1FAIpQLSd7593vUCz0wIsmEzyJ9wf0NlYNF54kHoCaZkP7MyoFjIkOsw",
+			"gd1": "2689508",
+			"gd2": "1000001",
+			"gd3": "1000002"
+		},
+		"gdExtra": "",
+		"dom": "",
+		"prov": "",
+		"mapOn": "",
+		"cse": "",
+		"hdimg": "",
+		"img": "",
+		"name": "Edmonton",
+		"tkn": ""
+		},
+		"cd_mis": {
+		"gdf": {
+			"gd": "1FAIpQLSeKX-FNo33w-ISH_uc5hb7hHkZDVnNTTx0RRV3YyHU70MR5-Q",
+			"gd1": "2890903",
+			"gd2": "1000001",
+			"gd3": "1000002"
+		},
+		"gdExtra": "",
+		"dom": "",
+		"prov": "",
+		"mapOn": "",
+		"cse": "",
+		"hdimg": "",
+		"img": "",
+		"name": "Mississauga",
+		"tkn": ""
+		},
+		"cd_win": {
+		"gdf": {
+			"gd": "1FAIpQLSfnB4QYvKtTrsRiwYlwDdN8O3rOYU_M3fLTTRxHKu3lUx6NFA",
+			"gd1": "2859685",
+			"gd2": "1000001",
+			"gd3": "1000002"
+		},
+		"gdExtra": "",
+		"dom": "",
+		"prov": "",
+		"mapOn": "",
+		"cse": "",
+		"hdimg": "",
+		"img": "",
+		"name": "Winnipeg",
+		"tkn": ""
+		},
+		"cd_van": {
+		"gdf": {
+			"gd": "1FAIpQLSepfTILG-ODtAAPzeqFjJFXrS8PR6FDnPX78VqfN6AwzMRh_g",
+			"gd1": "2922365",
+			"gd2": "1000001",
+			"gd3": "1000002"
+		},
+		"gdExtra": "",
+		"dom": "",
+		"prov": "",
+		"mapOn": "",
+		"cse": "",
+		"hdimg": "",
+		"img": "",
+		"name": "Vancouver",
+		"tkn": ""
+		},
+		"cd_ham": {
+		"gdf": {
+			"gd": "1FAIpQLSe2gFlr4lcbkSXlhm1n83JDHaKLniGCTko_ZmPXUEdufeZk3Q",
+			"gd1": "2251871",
+			"gd2": "1000001",
+			"gd3": "1000002"
+		},
+		"gdExtra": "",
+		"dom": "",
+		"prov": "",
+		"mapOn": "",
+		"cse": "",
+		"hdimg": "",
+		"img": "",
+		"name": "Hamilton",
+		"tkn": ""
+		},
+		"cd_que": {
+		"gdf": {
+			"gd": "1FAIpQLSfmbCWZ6ptXMvrtSauX978cMgFngWRc-AgsefS1QaQTupBwmg",
+			"gd1": "2869958",
+			"gd2": "1000001",
+			"gd3": "1000002"
+		},
+		"gdExtra": "",
+		"dom": "",
+		"prov": "",
+		"mapOn": "",
+		"cse": "",
+		"hdimg": "",
+		"img": "",
+		"name": "QuebecCity",
+		"tkn": ""
+		},
+		"dummy": {}
+		};
+		//
+		//
+		</script>
+		<style type="text/css">
+		html,
+		body {
+		height:100% /* must for table, iframe height} */
+		}
+		</style>
+	</head>
+	<body class="bdcomrec">
+		<script>
+		/* <![CDATA[ */
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', ga_cdry , 'auto');
+		ga('send', 'pageview');
+		/* ]]> */
+		</script>
+		<noscript>
+		<span class="nojs">You must enable JavaScript</span>
+		</noscript>
+		<div id="crecdiv">
+		</div>
+		<script >
+		//
+				// 		//
+		//
+		//
+				// 		//
+		//
+		//
+				// 		//
+		//
+		//
+				// 		//
+		//
+				//		//
+		//////////    FUNCS    /////////////////
+		function viewport(percentage, property) {
+			// v2 (vmax) - returns viewport % in pixels
+			// property='vw','vh','vmax', usage: viewport(40, "vh")+'px';
+			var w = Math.round((Math.max(document.documentElement.clientWidth, window.innerWidth || 0)) * percentage / 100);
+			var h = Math.round((Math.max(document.documentElement.clientHeight, window.innerHeight || 0)) * percentage / 100);
+			if (property == "vw") {
+				return w;
+			}
+			if (property == "vh") {
+				return h;
+			}
+			if (property == "vmax") {
+				if (w > h) {
+					return w;
+				}
+				if (h > w) {
+					return h;
+				}
+				if (w == h) {
+					return w;
+				}
+			}
+		}
+		function ga_evCatVal(evCat, evVal) {
+			// v2
+			try {
+				ga('send', 'event', evCat, evVal, {
+					'nonInteraction': 1
+				});
+			} catch (a) {
+				//
+			}
+		}
+		///////////  /FUNCS   /////////////
+		//
+		//
+		//
+		//
+		// SBMTEVNT
+		//
+		if (cd_s == "sbmtevnt") {
+			var tkn = cd_a;
+			//
+			$("#crecdiv").html('Loading...');
+			function valdfdbk() {
+				console.log('comm good;');
+				$("#fdbk").css({
+					'display': 'none',
+					'dummy': 'dummy'
+				});
+				setTimeout(
+					function() {
+						$("#crecdiv").append(
+							'<div class="container">' +
+			'<h2><!-- <img style="height:1em;display:inline-block;vertical-align:middle;" src="" /> --> Thank You</h2>' +
+			'<h3>Your submission has been sent.</h3>' +
+		'</div>' +
+		''
+		);
+		}, 1000);
+		return true;
+		}
+		//
+		$("#crecdiv").html(
+		'<iframe name="fdbk_hidden_iframe" id="fdbk_hidden_iframe" style="display:none;" onload=""></iframe>' +
+		'<div class="container" id="fdbk">' +
+			'<div style="font-size:18px;line-height:2.5em;"> <!-- <img style="height:1em;display:inline-block;vertical-align:middle;" src="" /> --> ' + 'Submit an Event' +
+		'</div> ' +
+		'<small>' +
+		//
+		//
+		'\x3C\x66\x6F\x72\x6D\x20\x61\x63\x74\x69\x6F\x6E\x3D\x22\x68\x74\x74\x70\x73\x3A\x2F\x2F\x64\x6F\x63\x73\x2E\x67\x6F\x6F\x67\x6C\x65\x2E\x63\x6F\x6D\x2F\x66\x6F\x72\x6D\x73\x2F\x64\x2F\x65\x2F' +
+		ctData[tkn].gdf.gd +
+		// '1FAIpQLSfT88bG2a6yAao5qhvVA2temYxU-kBU0Y-ODtWY7vE0eLks7Q' +
+		'/formResponse" method="post" ' +
+		' onSubmit="return valdfdbk()" ' +
+		' role="form" name="fdbk_frm_name" id="fdbk_frm_id" target="fdbk_hidden_iframe" >' +
+		//
+		' <div class="form-group">' +
+			'	<label>Event Title</label> <input required pattern=".{3,140}" title="Title of Event" class="form-control" type="text" name="entry.' + ctData[tkn].gdf.gd1 + '" value="" id="entry_' + ctData[tkn].gdf.gd1 + '"/>' +
+		'</div>' +
+		//
+		'<div class="form-group">' +
+			'	<label>Event Details</label> <textarea required pattern=".{10,5000}" title="Event Details" class="form-control" autocomplete="off" name="entry.' + ctData[tkn].gdf.gd2 + '"  id="entry_' + ctData[tkn].gdf.gd2 + '"></textarea>' +
+		'</div>' +
+		//
+		'<div class="form-group">' +
+			'	<label>Your Name <small>(will be published with event details if given)</small></label> <input title="Your Name" class="form-control" type="text" name="entry.' + ctData[tkn].gdf.gd3 + '" value="" id="entry_' + ctData[tkn].gdf.gd3 + '"/>' +
+		'</div>' +
+		//
+		'	<input class="btn btn-default" type="submit" name="submit" value="Submit"/>' +
+	'</form>' +
+	//
+	'</small>' +
+'</div>' +
+//
+''
+);
+} // SBMTEVNT
+//
+//
+//
+// 		//
+//
+//
+// 		//
+//
+//
+// 		//
+//
+//
+// 		//
+//
+//
+//
+</script>
+</body>
+</html>

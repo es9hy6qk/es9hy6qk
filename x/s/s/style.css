@@ -1,0 +1,337 @@
+body {
+  /*margin-top: 50px;  */
+  /*Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+/*CSE RELATED*/
+
+/*.gsc-branding, .gcsc-branding {
+  display: none !important;
+}*/
+
+/*CSE RELATED*/
+
+.header-image {
+  display: block;
+  width: 100%;
+  /*text-align: center;*/
+  background: url("https://2.bp.blogspot.com/-GsLrMOScVPQ/Vt6i-EqmjUI/AAAAAAAAAI0/L2LGKLpSk7Y/s1600/canadiary_blue_1900x500.png") no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.headline {
+  padding: 120px 0;
+}
+
+.headline h1 {
+  font-size: 130px;
+  font-weight: bold;
+  color: white;
+  font-family: helvetica neue,helvetica,arial;
+  font-weight: bold;
+  letter-spacing: -2px;
+  /*background: #fff;*/
+  /*background: rgba(255,255,255,0.9);*/
+}
+
+.headline h2 {
+  font-size: 77px;
+  /*background: #fff;*/
+  /*background: rgba(255,255,255,0.9);*/
+}
+
+.featurette-divider {
+  margin: 80px 0;
+}
+
+.featurette {
+  overflow: hidden;
+}
+
+.featurette-image.pull-left {
+  margin-right: 40px;
+}
+
+.featurette-image.pull-right {
+  margin-left: 40px;
+}
+
+.featurette-heading {
+  font-size: 50px;
+}
+
+footer {
+  margin: 50px 0;
+}
+
+@media (max-width: 1200px) {
+  .headline h1 {
+    font-size: 140px;
+  }
+
+  .headline h2 {
+    font-size: 63px;
+  }
+
+  .featurette-divider {
+    margin: 50px 0;
+  }
+
+  .featurette-image.pull-left {
+    margin-right: 20px;
+  }
+
+  .featurette-image.pull-right {
+    margin-left: 20px;
+  }
+
+  .featurette-heading {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 991px) {
+  .headline h1 {
+    font-size: 105px;
+  }
+
+  .headline h2 {
+    font-size: 50px;
+  }
+
+  .featurette-divider {
+    margin: 40px 0;
+  }
+
+  .featurette-image {
+    max-width: 50%;
+  }
+
+  .featurette-image.pull-left {
+    margin-right: 10px;
+  }
+
+  .featurette-image.pull-right {
+    margin-left: 10px;
+  }
+
+  .featurette-heading {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 0 15px;
+  }
+
+  .featurette-divider {
+    margin: 40px 0;
+  }
+
+  .featurette-heading {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 668px) {
+  .headline h1 {
+    font-size: 70px;
+  }
+
+  .headline h2 {
+    font-size: 32px;
+  }
+
+  .featurette-divider {
+    margin: 30px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .headline {
+    padding: 75px 0 25px 0;
+  }
+
+  .headline h1 {
+    font-size: 60px;
+  }
+
+  .headline h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  .featurette-divider {
+    margin: 10px 0;
+  }
+
+  .featurette-image {
+    max-width: 100%;
+  }
+
+  .featurette-image.pull-left {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .featurette-image.pull-right {
+    margin-bottom: 10px;
+    margin-left: 0;
+  }
+}
+
+/*   */
+/* ============== DEFAULT ONEPAGEWONDER OVERRIDEDS =================== */
+/*   */
+
+#add-event {
+  background-color: #8aa0bb;
+  border-radius: 5px;
+  color: white;
+  height: auto;
+  margin: 10px;
+  padding: 10px;
+}
+
+#hdimg {
+  border: 1px solid #999999;
+  display: inline-block;
+  margin-right: 10px;
+  max-width: 90%;
+  width: auto;
+}
+
+.headline {
+  padding: 0 !important;
+  margin-top: 50px !important;
+}
+
+.itempage .featurette-heading {
+  font-weight: bold;
+}
+
+.headline .itempage h2, .headline .mainpage h1 {
+  font-size: 6vmax;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-transform: lowercase;
+}
+
+.headline .itempage h2 a, .headline .mainpage h1 a {
+  color: white;
+  line-height: 90%;
+  display: block;
+}
+
+.headline .itempage h3, .headline .mainpage h2 {
+  font-size: 2vmax;
+  margin: 0 0 10px;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.pager {
+  font-size: 140%;
+}
+
+/*   */
+/*  */
+/* === NAVBAR CUSTOM COLORS ===*/
+/*http://work.smarchal.com/twbscolor/index.php*/
+.navbar-default {
+  background-color: #9cb2ce;
+  border-color: #9cb2ce; /*TO MAKE IT INVISIBLE*/
+}
+
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ecdbff;
+}
+
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ecdbff;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ecdbff;
+  background-color: #8e9fb6;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ecdbff;
+  background-color: #8e9fb6;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: #8e9fb6;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #8e9fb6;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+}
+
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-link:hover {
+  color: #ecdbff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ecdbff;
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ecdbff;
+    background-color: #8e9fb6;
+  }
+}
+
+/* === NAVBAR CUSTOM COLORS ===*/
+/*  */
+
+/*  */
+/*   */
+/* ============== /DEFAULT ONEPAGEWONDER OVERRIDEDS =================== */
+/*   */

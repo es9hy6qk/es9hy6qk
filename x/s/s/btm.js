@@ -414,6 +414,7 @@ function gCSE(cseId, divId, phText) {
 }
 
 function asadRespId(prefix, postfix, divId, idTxt, slot, channel, orient, divWidth, divHeight) {}
+
 function _asadRespId(prefix, postfix, divId, idTxt, slot, channel, orient, divWidth, divHeight) {
 	// v10 - bugfix
 	if (!document.getElementById(divId)) {
@@ -577,7 +578,7 @@ function addthis_async_append(divId, customUrlTitle, url, title) {
 	//
 	var html = '<div class="addthis_toolbox addthis_32x32_style" style=" "> ' +
 		'<table><tr>' +
-		'<td> <a rel="nofollow" class="addthis_button_facebook"></a></td>' +
+		// '<td> <a rel="nofollow" class="addthis_button_facebook"></a></td>' +
 		'<td> <a rel="nofollow" class="addthis_button_twitter"></a></td>' +
 		// '<td> <a rel="nofollow" class="addthis_button_reddit"></a></td>' +
 		'<td> <a rel="nofollow" class="addthis_button_email"></a></td>' +
@@ -703,7 +704,6 @@ if (siteSection == "mainsite") {
 	// ----------- MAINPAGE --------------
 	if (ThsBlg_pg == 'mainpage') {
 		// lu 1/2 
- 
 		/////////////// DTP MAINPAGE 
 		if (!detectmob()) {
 			// MAINPAGE DTP AD 1/2
@@ -867,7 +867,9 @@ $(function() {
 			// console.log('tada');
 		});
 		// 
-		$('#add-event').after('<a target="_blank" class="navbar-brand"  href="https://twitter.com/canadiary"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://4.bp.blogspot.com/-Mn-LDAPrbTw/VwP6Ugj64TI/AAAAAAAAAJw/O-lL69Lc9ugW5ExMI2kgqQf0YEum6v7tA/s1600/twitter.png" /></a> <a target="_blank" class="navbar-brand"  href="https://www.facebook.com/pages/CanaDiary/118613358160788"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://2.bp.blogspot.com/-JxeY3m6pd1c/VwP6Un_PwRI/AAAAAAAAAJ0/SLdwOnaf_0gr5gpLl8bGNFLntdgAtiFZg/s1600/facebook.png" /></a> ');
+		$('#add-event').after('<a target="_blank" class="navbar-brand"  href="https://twitter.com/canadiary"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://4.bp.blogspot.com/-Mn-LDAPrbTw/VwP6Ugj64TI/AAAAAAAAAJw/O-lL69Lc9ugW5ExMI2kgqQf0YEum6v7tA/s1600/twitter.png" /></a> ' +
+			// '<a target="_blank" class="navbar-brand"  href="https://www.facebook.com/pages/CanaDiary/118613358160788"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://2.bp.blogspot.com/-JxeY3m6pd1c/VwP6Un_PwRI/AAAAAAAAAJ0/SLdwOnaf_0gr5gpLl8bGNFLntdgAtiFZg/s1600/facebook.png" /></a> ' +
+			"");
 		$('.mainpage h1 a, .itempage h2 a ').prepend('<img id="hdimg" alt="" src="' + this_hdimg + '" />');
 		// 
 		// ========= mainpage =========

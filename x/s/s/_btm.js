@@ -1,6 +1,5 @@
 // ----- VARS
 // 
-thsBlg_as = 'ca-\x70' + 'u' + '\x62\x2D' + '5' + '69\x30' + '2' + '\x3031' + '1' + '33' + '5' + '97' + '2' + '1';
 if (typeof ThsBlg_pg === 'undefined') {
 	ThsBlg_pg = "";
 }
@@ -19,19 +18,10 @@ thsBlg_amz = {
 };
 thsBlg_amz_defKW = "canadian events";
 thsBlg_epn = "5337817697"; // cndr epn?
-thsBlg_dyn_catcher = "s.canadiary.com/c2/";
-thsBlg_img_cdn = "s.canadiary.com/i/";
+thsBlg_dyn_catcher = "apps.canadiary.com/x/s/c2/";
+thsBlg_img_cdn = "apps.canadiary.com/x/s/i/";
 // 
 //  
-// 
-// HARDCODED
-// function asadPageLevel() {
-// 	var script = document.createElement("script");
-// 	script.innerHTML = ' (adsbygoogle = window.adsbygoogle || []).push({ google_ad_client: "' + thsBlg_as + '", enable_page_level_ads: true }); ';
-// 	document.head.appendChild(script);
-// }
-// asadPageLevel();
-// // 
 // 
 ////////////  MAINSITE(CITIES)   /////////////////////
 if (siteSection == "mainsite") {
@@ -423,7 +413,9 @@ function gCSE(cseId, divId, phText) {
 	})();
 }
 
-function asadRespId(prefix, postfix, divId, idTxt, slot, channel, orient, divWidth, divHeight) {
+function asadRespId(prefix, postfix, divId, idTxt, slot, channel, orient, divWidth, divHeight) {}
+
+function _asadRespId(prefix, postfix, divId, idTxt, slot, channel, orient, divWidth, divHeight) {
 	// v10 - bugfix
 	if (!document.getElementById(divId)) {
 		// 
@@ -586,7 +578,7 @@ function addthis_async_append(divId, customUrlTitle, url, title) {
 	//
 	var html = '<div class="addthis_toolbox addthis_32x32_style" style=" "> ' +
 		'<table><tr>' +
-		'<td> <a rel="nofollow" class="addthis_button_facebook"></a></td>' +
+		// '<td> <a rel="nofollow" class="addthis_button_facebook"></a></td>' +
 		'<td> <a rel="nofollow" class="addthis_button_twitter"></a></td>' +
 		// '<td> <a rel="nofollow" class="addthis_button_reddit"></a></td>' +
 		'<td> <a rel="nofollow" class="addthis_button_email"></a></td>' +
@@ -712,20 +704,10 @@ if (siteSection == "mainsite") {
 	// ----------- MAINPAGE --------------
 	if (ThsBlg_pg == 'mainpage') {
 		// lu 1/2 
-		// insertAfterHTMLByClass("featurette-divider", '<div> <div id="as_T"></div></div> <hr class="featurette-divider"> ');
-		// asadRespId(
-		// 	'<div>',
-		// 	'</div>',
-		// 	"as_T",
-		// 	"xyz_as_T",
-		// 	"6058764646",
-		// 	"7930360325",
-		// 	"link"
-		// );
 		/////////////// DTP MAINPAGE 
 		if (!detectmob()) {
 			// MAINPAGE DTP AD 1/2
-			insertAfterHTMLByClass("featurette-divider", '<div style="width:' + viewport(90, 'vw') + 'px;height:100px;margin:0 auto 15px auto;"><div id="as_main_T"></div></div>');
+			// insertAfterHTMLByClass("featurette-divider", '<div style="width:' + viewport(90, 'vw') + 'px;height:100px;margin:0 auto 15px auto;"><div id="as_main_T"></div></div>');
 			// mainpage
 			// asadRespId(
 			// 	' ',
@@ -738,7 +720,7 @@ if (siteSection == "mainsite") {
 			// );
 			// 
 			// MAINPAGE DTP AD 2/2
-			insertBeforeHTMLByClass("pager", ' <div style="width:' + viewport(90, 'vw') + 'px;height:100px;margin:0 auto 15px auto;"><div id="as_main_B"></div></div> <hr class="featurette-divider"> ');
+			// insertBeforeHTMLByClass("pager", ' <div style="width:' + viewport(90, 'vw') + 'px;height:100px;margin:0 auto 15px auto;"><div id="as_main_B"></div></div> <hr class="featurette-divider"> ');
 			// asadRespId(
 			// 	' ',
 			// 	' ',
@@ -752,7 +734,7 @@ if (siteSection == "mainsite") {
 		/////////////// DTP MOB
 		if (detectmob()) {
 			// MAINPAGE MOB LU 1/2
-			insertAfterHTMLByClass("featurette-divider", '<div style="width:200px;height:100px;margin:0 0 15px 0;"><div id="as_main_T"></div></div>');
+			// insertAfterHTMLByClass("featurette-divider", '<div style="width:200px;height:100px;margin:0 0 15px 0;"><div id="as_main_T"></div></div>');
 			// asadRespId(
 			// 	'<div>',
 			// 	'</div>',
@@ -764,7 +746,7 @@ if (siteSection == "mainsite") {
 			// );
 			// 
 			// MAINPAGE MOB LU 2/2
-			insertBeforeHTMLByClass("pager", ' <div style="width:200px;height:100px;margin:0 0 15px 0;"><div id="as_main_B"></div></div> <hr class="featurette-divider"> ');
+			// insertBeforeHTMLByClass("pager", ' <div style="width:200px;height:100px;margin:0 0 15px 0;"><div id="as_main_B"></div></div> <hr class="featurette-divider"> ');
 			// asadRespId(
 			// 	'<div>',
 			// 	'</div>',
@@ -885,8 +867,12 @@ $(function() {
 			// console.log('tada');
 		});
 		// 
-		$('#add-event').after('<a target="_blank" class="navbar-brand"  href="https://twitter.com/canadiary"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://4.bp.blogspot.com/-Mn-LDAPrbTw/VwP6Ugj64TI/AAAAAAAAAJw/O-lL69Lc9ugW5ExMI2kgqQf0YEum6v7tA/s1600/twitter.png" /></a> <a target="_blank" class="navbar-brand"  href="https://www.facebook.com/pages/CanaDiary/118613358160788"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://2.bp.blogspot.com/-JxeY3m6pd1c/VwP6Un_PwRI/AAAAAAAAAJ0/SLdwOnaf_0gr5gpLl8bGNFLntdgAtiFZg/s1600/facebook.png" /></a> ');
-		$('.mainpage h1 a, .itempage h2 a ').prepend('<img id="hdimg" alt="" src="' + this_hdimg + '" />');
+		$('#add-event').after('<a target="_blank" class="navbar-brand"  href="https://twitter.com/canadiary"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://4.bp.blogspot.com/-Mn-LDAPrbTw/VwP6Ugj64TI/AAAAAAAAAJw/O-lL69Lc9ugW5ExMI2kgqQf0YEum6v7tA/s1600/twitter.png" /></a> ' +
+			// '<a target="_blank" class="navbar-brand"  href="https://www.facebook.com/pages/CanaDiary/118613358160788"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://2.bp.blogspot.com/-JxeY3m6pd1c/VwP6Un_PwRI/AAAAAAAAAJ0/SLdwOnaf_0gr5gpLl8bGNFLntdgAtiFZg/s1600/facebook.png" /></a> ' +
+			"");
+		$('.mainpage h1 a, .itempage h2 a ').prepend(
+			'<img id="hdimg" alt="" src="' + this_hdimg + '" />'
+		);
 		// 
 		// ========= mainpage =========
 		if (ThsBlg_pg == 'mainpage') {
@@ -900,7 +886,7 @@ $(function() {
 				shortDesc = limitWords(shortDesc, 30);
 				// console.log(shortDesc);
 				$('.featurette-heading', this).after(
-					'<img class="featurette-image img-circle img-responsive pull-right" src="' + mapSrc('200x200', address, cd_city) + '">'
+					// '<img class="featurette-image img-circle img-responsive pull-right" src="' + mapSrc('200x200', address, cd_city) + '">'
 				);
 				$(".featurette-image", this).wrap('<a href="' + url + '"/>');
 				$(".lead", this).html(shortDesc);
@@ -913,7 +899,7 @@ $(function() {
 			// prependHTMLByClass('lead', '<div id="maptoevent"></div>');
 			var address = $('.addr').text();
 			$('.featurette-heading').after(
-				'<img class="featurette-image img-circle img-responsive pull-right" src="' + mapSrc('200x200', address, cd_city) + '">'
+				// '<img class="featurette-image img-circle img-responsive pull-right" src="' + mapSrc('200x200', address, cd_city) + '">'
 			);
 			// linkify raw urls, first save existing <a>
 			var anchor = $(".lead").html().match(/<a[^>]*>.*<\/a>/m)[0];
@@ -921,8 +907,17 @@ $(function() {
 			$(".lead").html(linkify(linkified_text).replace("Event Details", anchor));
 			//
 			$("h1").after('<div id="addthis_rec"></div>');
-			$("#addthis_rec").html(addthis_async_append("addthis_rec", "default"));
+			// $("#addthis_rec").html(addthis_async_append("addthis_rec", "default"));
 		}
+		//// both mainpage/item
+		////////////
+		//// remove our tags if they get inserted (does that in edmonton feeds!)
+		$('.lead').each(function(index) {
+			var a = $(this).html().replace(/(\[title\]|\[desc\]|\[date\])/igm, " | ");
+			$(this).html(a);
+			//  
+			//////////////
+		});
 	}
 	////////////  /MAINSITE(CITIES)   /////////////////////
 });
@@ -932,7 +927,7 @@ $(window).on("load", function() {
 	if (siteSection == "mainsite") {
 		// ALL MAINSITE DTP+MOB
 		$('.container:eq(2)').prepend('<div style="width:90%;display:table;margin:10px auto;">  <div id="cd_gcse"></div>  </div>');
-		gCSE('006235528321221562007:' + this_cse, 'cd_gcse', 'Canadiary');
+		gCSE('006235528321221562007:' + this_cse, 'cd_gcse', '');
 		// 
 		if (ThsBlg_pg == 'itempage') {
 			// rec for loadlast divs

@@ -870,7 +870,9 @@ $(function() {
 		$('#add-event').after('<a target="_blank" class="navbar-brand"  href="https://twitter.com/canadiary"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://4.bp.blogspot.com/-Mn-LDAPrbTw/VwP6Ugj64TI/AAAAAAAAAJw/O-lL69Lc9ugW5ExMI2kgqQf0YEum6v7tA/s1600/twitter.png" /></a> ' +
 			// '<a target="_blank" class="navbar-brand"  href="https://www.facebook.com/pages/CanaDiary/118613358160788"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://2.bp.blogspot.com/-JxeY3m6pd1c/VwP6Un_PwRI/AAAAAAAAAJ0/SLdwOnaf_0gr5gpLl8bGNFLntdgAtiFZg/s1600/facebook.png" /></a> ' +
 			"");
-		$('.mainpage h1 a, .itempage h2 a ').prepend('<img id="hdimg" alt="" src="' + this_hdimg + '" />');
+		$('.mainpage h1 a, .itempage h2 a ').prepend(
+			'<img id="hdimg" alt="" src="' + this_hdimg + '" />'
+		);
 		// 
 		// ========= mainpage =========
 		if (ThsBlg_pg == 'mainpage') {
@@ -884,7 +886,7 @@ $(function() {
 				shortDesc = limitWords(shortDesc, 30);
 				// console.log(shortDesc);
 				$('.featurette-heading', this).after(
-					'<img class="featurette-image img-circle img-responsive pull-right" src="' + mapSrc('200x200', address, cd_city) + '">'
+					// '<img class="featurette-image img-circle img-responsive pull-right" src="' + mapSrc('200x200', address, cd_city) + '">'
 				);
 				$(".featurette-image", this).wrap('<a href="' + url + '"/>');
 				$(".lead", this).html(shortDesc);
@@ -897,7 +899,7 @@ $(function() {
 			// prependHTMLByClass('lead', '<div id="maptoevent"></div>');
 			var address = $('.addr').text();
 			$('.featurette-heading').after(
-				'<img class="featurette-image img-circle img-responsive pull-right" src="' + mapSrc('200x200', address, cd_city) + '">'
+				// '<img class="featurette-image img-circle img-responsive pull-right" src="' + mapSrc('200x200', address, cd_city) + '">'
 			);
 			// linkify raw urls, first save existing <a>
 			var anchor = $(".lead").html().match(/<a[^>]*>.*<\/a>/m)[0];
@@ -905,8 +907,17 @@ $(function() {
 			$(".lead").html(linkify(linkified_text).replace("Event Details", anchor));
 			//
 			$("h1").after('<div id="addthis_rec"></div>');
-			$("#addthis_rec").html(addthis_async_append("addthis_rec", "default"));
+			// $("#addthis_rec").html(addthis_async_append("addthis_rec", "default"));
 		}
+		//// both mainpage/item
+		////////////
+		//// remove our tags if they get inserted (does that in edmonton feeds!)
+		$('.lead').each(function(index) {
+			var a = $(this).html().replace(/(\[title\]|\[desc\]|\[date\])/igm, " | ");
+			$(this).html(a);
+			//  
+			//////////////
+		});
 	}
 	////////////  /MAINSITE(CITIES)   /////////////////////
 });
@@ -916,7 +927,7 @@ $(window).on("load", function() {
 	if (siteSection == "mainsite") {
 		// ALL MAINSITE DTP+MOB
 		$('.container:eq(2)').prepend('<div style="width:90%;display:table;margin:10px auto;">  <div id="cd_gcse"></div>  </div>');
-		gCSE('006235528321221562007:' + this_cse, 'cd_gcse', 'Canadiary');
+		gCSE('006235528321221562007:' + this_cse, 'cd_gcse', '');
 		// 
 		if (ThsBlg_pg == 'itempage') {
 			// rec for loadlast divs

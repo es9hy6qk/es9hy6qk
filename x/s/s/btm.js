@@ -1,4 +1,4 @@
-// ----- VARS
+// ----- x.canadiary.com btm js
 // 
 if (typeof ThsBlg_pg === 'undefined') {
 	ThsBlg_pg = "";
@@ -20,6 +20,7 @@ thsBlg_amz_defKW = "canadian events";
 thsBlg_epn = "5337817697"; // cndr epn?
 thsBlg_dyn_catcher = "apps.canadiary.com/x/s/c2/";
 thsBlg_img_cdn = "apps.canadiary.com/x/s/i/";
+thsBlg_reportProductForm = '1FAIpQLSfMVyXMStWE7MLZVQV8rsXD7TaHRw6iwYxR4AcPwWtrNogblw'; // gd form
 // 
 //  
 // 
@@ -631,132 +632,18 @@ if (siteSection == "mainsite") {
 	// resp 4684716642, linku 728: 0035355522,  resp linku: 6058764646
 	// ----------- ALL ---------------
 	// --- ALL DTP
-	if (!detectmob()) {
-		// ad 1/1
-		// header
-		// prependHTMLByClass('header-image', '<div style="float:right;margin:15px 20px 20px 10px"><div id="as_hdr" style="background-color:#eee;width:300px;height:250px;overflow:hidden;"></div></div>');
-		//
-		// asadRespId(
-		// 	'<div>',
-		// 	'</div>',
-		// 	"as_hdr",
-		// 	"xyz_as_hdr",
-		// 	"4684716642",
-		// 	"9407524737",
-		// 	"r"
-		// );
-		/////// ::OFF:: //////////
-		//////////// STICKYBOTTOM_DTP
-		// appendHTMLByTag("head", '<style>body{padding-bottom:30px}</style>');
-		// // IMP display is none! (set by onscroll!)
-		// appendHTMLByTag("body", '<div id="stickybottom_dtp" style="display:table;width:100%;position:fixed;bottom:0;left:0;height:30px;background-color:#9CB2CE;"><div style="display:table-cell;vertical-align:middle;text-align:center;"><div id="sb_rec"></div></div></div>');
-		// :::: 2DO FND BTTR PLCMNT 4 BGGR UNIT
-		// mnad_async(
-		// 	'sb_rec', // divId
-		// 	'728x20', // size NNNxNNN format
-		// 	'381482514', // crid (or loadTag("nnn") )
-		// 	'111299', // versionId or ''
-		// 	'8CU42N84B' // cid
-		// );
-	}
+	if (!detectmob()) {}
 	//////// ALL MOB
-	if (detectmob()) {
-		// OFF FB
-		/*
-	/////////// STICKYBOTTOM ON MOB
-	appendHTMLByTag("head", '<style>body{padding-bottom:60px}</style>');
-	appendHTMLByTag("body", '<div id="stickybottom" style="display:table;width:100%;position:fixed;bottom:0;left:0;height:50px;background-color:#000;"><div style="display:table-cell;vertical-align:middle;text-align:center;"><div id="fb_rec"></div></div></div>');
-	fbad(
-		'', //'<div style="display:table;margin:1vh auto;width:320px">',
-		'', //'</div>',
-		'fb_rec',
-		'1138231902904106', // num before _  
-		'1138232809570682', // num after _
-		'native', //'320x50', // format: 320x50,300x250 for banner, 'native' for native
-		'', //  // fbadCSS
-		// fbadHTML
-		'<style>' +
-		'#fb_rec,#ad_root,#fbBnTbl{height:100%;}.fbAdLink{display:block;height:100%}#fbBnTbl{width:auto;max-width:400px;margin:0 auto;border-collapse:collapse;padding:0;border-spacing:0;border:none;} #fbBnTbl td{padding:0;vertical-align:middle;text-align:center}#fBTd00{}.fbAdIcon{margin:0 auto;display:block;width:48px;height:48px;} #fBTd01{color:white;font:bold 14px/1em sans-serif} .fbAdTitle{padding:0 2px} #fBTd02{width:30%;font:bold 13px/1em sans-serif}.fbCTAWrap{margin:0 auto;display:table; height:85%;width:auto;color:rgba(255, 255, 255, 0.9);background:rgba(255, 255, 255, 0.4);border:solid 2px rgba(255, 255, 255, 0.6);border-right:solid 2px rgba(0, 0, 0, 0.5);border-bottom:solid 2px rgba(0, 0, 0, 0.5);} .fbAdCallToAction{display:table-cell;vertical-align:middle;padding:0 3px;}' +
-		'</style>' +
-		// 
-		'<span class="fbAdLink"> <table id="fbBnTbl"></tr>' +
-		'<td id="fBTd00">' +
-		'<span class="fbAdIcon"></span>' +
-		'</td>' +
-		'<td id="fBTd01">' +
-		// '<span class="fbAdIcon"></span>&nbsp;' +
-		'<span class="fbAdTitle"></span>' +
-		'</td>' +
-		//
-		'<td id="fBTd02">' +
-		'<span class="fbCTAWrap">' +
-		'<span class="fbAdCallToAction"></span>' +
-		'</span>' +
-		'</td>' +
-		//
-		'</tr></table> </span>' +
-		''
-	);
-	*/
-	}
+	if (detectmob()) {}
 	// //  // stickybottom  div on mob  
 	// // 
 	// ----------- MAINPAGE --------------
 	if (ThsBlg_pg == 'mainpage') {
 		// lu 1/2 
 		/////////////// DTP MAINPAGE 
-		if (!detectmob()) {
-			// MAINPAGE DTP AD 1/2
-			// insertAfterHTMLByClass("featurette-divider", '<div style="width:' + viewport(90, 'vw') + 'px;height:100px;margin:0 auto 15px auto;"><div id="as_main_T"></div></div>');
-			// mainpage
-			// asadRespId(
-			// 	' ',
-			// 	' ',
-			// 	"as_main_T",
-			// 	"xyz_as_main_T",
-			// 	"4684716642",
-			// 	"8248768086",
-			// 	"h"
-			// );
-			// 
-			// MAINPAGE DTP AD 2/2
-			// insertBeforeHTMLByClass("pager", ' <div style="width:' + viewport(90, 'vw') + 'px;height:100px;margin:0 auto 15px auto;"><div id="as_main_B"></div></div> <hr class="featurette-divider"> ');
-			// asadRespId(
-			// 	' ',
-			// 	' ',
-			// 	"as_main_B",
-			// 	"xyz_as_main_B",
-			// 	"4684716642",
-			// 	"8248768086",
-			// 	"h"
-			// );
-		}
+		if (!detectmob()) {}
 		/////////////// DTP MOB
-		if (detectmob()) {
-			// MAINPAGE MOB LU 1/2
-			// insertAfterHTMLByClass("featurette-divider", '<div style="width:200px;height:100px;margin:0 0 15px 0;"><div id="as_main_T"></div></div>');
-			// asadRespId(
-			// 	'<div>',
-			// 	'</div>',
-			// 	"as_main_T",
-			// 	"xyz_as_main_T",
-			// 	"6058764646",
-			// 	"7930360325",
-			// 	"link"
-			// );
-			// 
-			// MAINPAGE MOB LU 2/2
-			// insertBeforeHTMLByClass("pager", ' <div style="width:200px;height:100px;margin:0 0 15px 0;"><div id="as_main_B"></div></div> <hr class="featurette-divider"> ');
-			// asadRespId(
-			// 	'<div>',
-			// 	'</div>',
-			// 	"as_main_B",
-			// 	"xyz_as_main_B",
-			// 	"6058764646",
-			// 	"7930360325",
-			// 	"link"
-			// );
-		}
+		if (detectmob()) {}
 	}
 	// ----------- ITEMPAGE --------------
 	// AS ids  
@@ -765,27 +652,15 @@ if (siteSection == "mainsite") {
 		////////  
 		// 	
 		$('h1').prepend(ldngPrgssBar());
+		// 
+		//// on all
+		// 
 		if (!detectmob()) {
 			// ITEMPAGE DTP AD 1/1
 			document.getElementsByClassName('container')[2].insertAdjacentHTML("afterbegin", '<div style="float:right;margin:20px 0 0 ' + viewport(5, 'vw') + 'px;width:' + viewport(25, 'vw') + 'px;___height:' + viewport(100, 'vh') + 'px;"><div id="rightbar"><div id="as_sb_T"></div><div id="as_sb_B"></div></div></div>');
 			// 
-			// asadRespId(
-			// 	'<div style="max-height:400px;text-align:center;margin:0 0 5px 0;">',
-			// 	'</div>',
-			// 	"as_sb_T",
-			// 	"xyz_as_sb_T",
-			// 	"4684716642",
-			// 	"9407524737",
-			// 	"a"
-			// );
-			// aff 1/1
 			writeInnerHTML('as_sb_B', '<div style="text-align:center;margin:0 0 5px 0;"> <div id="itm_aff_1"></div> </div>');
 			//  
-			// ITEMPAGE DTP LU 2/2
-			// 
-			// mnad 1/1 ::OFF::
-			// mnad_async('as_mn_B', '600x250', '857827547', '111299', '8CU42N84B');
-			// amz ntv lnks via ifrm
 		}
 		// 
 		if (detectmob()) {
@@ -793,17 +668,14 @@ if (siteSection == "mainsite") {
 			// 
 		}
 		// itempage DTP+MOB 
-		// LU
-		insertAfterHTMLByClass('lead', '<hr/> <div style="margin:10px auto 20px"> <div class="row"><div class="col-sm-9"> <div id="as_lb1"></div> </div> <div class="col-sm-3"> <div id="as_lb2"></div> </div> </div> </div>  <hr/> <div style="width:90%;margin:0 auto;"><div id="itm_aff_1"></div> </div> ');
-		// asadRespId(
-		// 	'<div style="text-align:center">',
-		// 	'</div>',
-		// 	"as_lb1",
-		// 	"xyz_as_lb1",
-		// 	"6058764646",
-		// 	"9839077837",
-		// 	"link"
-		// );
+		$('.lead').after(
+			/////////// report this item link
+			'<hr/><div style="text-align:right; margin:-10px 0"><a style="font: normal 12px/1em Arial;" rel="nofollow" href="https://docs.google.com/forms/d/e/' + thsBlg_reportProductForm + '/viewform?usp=sf_link"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Report this event</a></div><div style="clear:both;"></div> ' +
+			///////// lu 
+			'<hr/> <div style="margin:10px auto 20px"> <div class="row"><div class="col-sm-9"> <div id="as_lb1"></div> </div> <div class="col-sm-3"> <div id="as_lb2"></div> </div> </div> </div>  <hr/> <div style="width:90%;margin:0 auto;"><div id="itm_aff_1"></div> </div> ' +
+			// 
+			''
+		);
 	}
 	// 
 }
@@ -894,19 +766,6 @@ $(function() {
 		}
 		// ========= itempage =========
 		if (ThsBlg_pg == 'itempage') {
-			$('footer').prepend('<div class="well"> <small> <p> <i><b>Disclosure:</b> </i> <i>As Amazon Associate, we earn from qualifying purchases.</i>  </p> </small> </div>');
-			// addr gmap
-			// prependHTMLByClass('lead', '<div id="maptoevent"></div>');
-			var address = $('.addr').text();
-			$('.featurette-heading').after(
-				// '<img class="featurette-image img-circle img-responsive pull-right" src="' + mapSrc('200x200', address, cd_city) + '">'
-			);
-			// linkify raw urls, first save existing <a>
-			var anchor = $(".lead").html().match(/<a[^>]*>.*<\/a>/m)[0];
-			var linkified_text = $(".lead").text();
-			$(".lead").html(linkify(linkified_text).replace("Event Details", anchor));
-			//
-			$("h1").after('<div id="addthis_rec"></div>');
 			// $("#addthis_rec").html(addthis_async_append("addthis_rec", "default"));
 		}
 		//// both mainpage/item

@@ -555,7 +555,11 @@ function limitWords(textToLimit, wordLimit) {
 	} else return textToLimit;
 }
 
-function linkify(inputText) {
+function linkify(text) {
+	/// first strip all <a 
+
+	inputText = text;
+
 	var replacedText, replacePattern1, replacePattern2, replacePattern3;
 	//URLs starting with http://, https://, or ftp://
 	replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
@@ -771,9 +775,23 @@ $(function() {
 		//// both mainpage/item
 		////////////
 		//// remove our tags if they get inserted (does that in edmonton feeds!)
+		/// CLEANUP TEXT
 		$('.lead').each(function(index) {
-			var a = $(this).html().replace(/(\[title\]|\[desc\]|\[date\])/igm, " | ");
+			var a = $(this).html()
+			a = a.replace(/(\[title\]|\[desc\]|\[date\])/igm, " | ");
+
+			/// replace all emails with button
+			a = a.replace(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gim, ' <a role="button" class="btn btn-default btn-sm" href="mailto:$1"><span style="font-size:90%;margin:0 4px" class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Email</a> ');
+
+			/// replace all urls NOT in "" with button
+			a = a.replace(/(\b[^"](https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|][^"])/gim, ' <a target="_blank" rel="nofollow" role="button" class="btn btn-default btn-sm" href="$1"><span style="font-size:90%;margin:0 4px" class="glyphicon glyphicon-new-window" aria-hidden="true"></span>Link</a> ');
+
 			$(this).html(a);
+			/// 
+
+			//
+			// hide emails
+
 			//  
 			//////////////
 		});
@@ -784,6 +802,9 @@ $(function() {
 $(window).on("load", function() {
 	////////////  MAINSITE(CITIES)   /////////////////////
 	if (siteSection == "mainsite") {
+		/////// ON ALL
+
+		//////////
 		// ALL MAINSITE DTP+MOB
 		$('.container:eq(2)').prepend('<div style="width:90%;display:table;margin:10px auto;">  <div id="cd_gcse"></div>  </div>');
 		gCSE('006235528321221562007:' + this_cse, 'cd_gcse', '');
@@ -791,17 +812,6 @@ $(window).on("load", function() {
 		if (ThsBlg_pg == 'itempage') {
 			// rec for loadlast divs
 			$(".featurette:eq(0)").after('<div id="loadlastdiv"></div>');
-			// 
-			/////// ITEMPAGE AFF 1/1
-			//// DISABLD WITH AS (ONLY PGLVL AS NOW ON)
-			// $('#itm_aff_1').html('<iframe class="iframeresize_class" style="display:block;width:99%" src="https://' + thsBlg_dyn_catcher + '?s=amz&a=' + this_name + '" scrolling="no" frameborder="0" border="0" ></iframe>');
-			// // 
-			// $.getScript("https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js")
-			// 	.done(function() {
-			// 		$('.iframeresize_class').iFrameResize();
-			// 	});
-			/////// /ITEMPAGE AFF 1/1		 
-			// disq
 			$('#loadlastdiv').append('<div id="disqus_thread"></div>');
 			disqusAsync('canadiary', 'disqus_thread');
 			$('#ldngPrgssBar').remove();

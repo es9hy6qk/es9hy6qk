@@ -655,22 +655,8 @@ if (siteSection == "mainsite") {
 		///////// 
 		////////  
 		// 	
-		$('h1').prepend(ldngPrgssBar());
-		// 
-		//// on all
-		// 
-		if (!detectmob()) {
-			// ITEMPAGE DTP AD 1/1
-			document.getElementsByClassName('container')[2].insertAdjacentHTML("afterbegin", '<div style="float:right;margin:20px 0 0 ' + viewport(5, 'vw') + 'px;width:' + viewport(25, 'vw') + 'px;___height:' + viewport(100, 'vh') + 'px;"><div id="rightbar"><div id="as_sb_T"></div><div id="as_sb_B"></div></div></div>');
-			// 
-			writeInnerHTML('as_sb_B', '<div style="text-align:center;margin:0 0 5px 0;"> <div id="itm_aff_1"></div> </div>');
-			//  
-		}
-		// 
-		if (detectmob()) {
-			// 
-			// 
-		}
+ 
+ 
 		// itempage DTP+MOB 
 		$('.lead').after(
 			/////////// report this item link
@@ -743,8 +729,8 @@ $(function() {
 			// console.log('tada');
 		});
 		// 
-		$('#add-event').after('<a target="_blank" class="navbar-brand"  href="https://twitter.com/canadiary"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://4.bp.blogspot.com/-Mn-LDAPrbTw/VwP6Ugj64TI/AAAAAAAAAJw/O-lL69Lc9ugW5ExMI2kgqQf0YEum6v7tA/s1600/twitter.png" /></a> ' +
-			// '<a target="_blank" class="navbar-brand"  href="https://www.facebook.com/pages/CanaDiary/118613358160788"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://2.bp.blogspot.com/-JxeY3m6pd1c/VwP6Un_PwRI/AAAAAAAAAJ0/SLdwOnaf_0gr5gpLl8bGNFLntdgAtiFZg/s1600/facebook.png" /></a> ' +
+		$('#add-event').after(' &nbsp; &nbsp; | <a target="_blank" class="navbar-brand"  href="https://twitter.com/canadiary"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://4.bp.blogspot.com/-Mn-LDAPrbTw/VwP6Ugj64TI/AAAAAAAAAJw/O-lL69Lc9ugW5ExMI2kgqQf0YEum6v7tA/s1600/twitter.png" /></a> ' +
+ 
 			"");
 		$('.mainpage h1 a, .itempage h2 a ').prepend(
 			'<img id="hdimg" alt="" src="' + this_hdimg + '" />'

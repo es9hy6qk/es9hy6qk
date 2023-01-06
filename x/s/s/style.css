@@ -60,6 +60,23 @@ hr {
   margin-right: 10px;
 }
 
+.headline h3 {
+  font-size: medium;
+}
+
+.headline h3, .headline h2 {
+  margin-top: 10px !important;
+  text-transform: uppercase;
+}
+
 .lead {
   line-height: 1.6em;
+}
+
+/*max 800*/
+
+.container, .mainpage h1 a, .itempage h2 a, .headline h3, .headline h2 {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
 }

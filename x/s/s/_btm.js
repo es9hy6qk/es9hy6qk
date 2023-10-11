@@ -314,23 +314,6 @@ function viewport(percentage, property) {
 	}
 }
 
-function ldngPrgssBar() {
-	///// v1 
-	//// req bootstrap
-	return '<div id="ldngPrgssBar"><div class="progress"> <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%"> </div> </div> </div>';
-}
-
-function ga_evCatVal(evCat, evVal) {
-	// v2
-	try {
-		ga('send', 'event', evCat, evVal, {
-			'nonInteraction': 1
-		});
-	} catch (a) {
-		//
-	}
-}
-
 function amzNtv_sync(ad_mode, design, search_phrase, tracking_id, linkid, title, default_category) {
 	// v2
 	// ad_mode: "search"||"";
@@ -361,30 +344,6 @@ function amzNtv_sync(ad_mode, design, search_phrase, tracking_id, linkid, title,
 		'');
 }
 
-function viewport(percentage, property) {
-	// v2 (vmax) - returns viewport % in pixels
-	// property='vw','vh','vmax', usage: viewport(40, "vh")+'px';
-	var w = Math.round((Math.max(document.documentElement.clientWidth, window.innerWidth || 0)) * percentage / 100);
-	var h = Math.round((Math.max(document.documentElement.clientHeight, window.innerHeight || 0)) * percentage / 100);
-	if (property == "vw") {
-		return w;
-	}
-	if (property == "vh") {
-		return h;
-	}
-	if (property == "vmax") {
-		if (w > h) {
-			return w;
-		}
-		if (h > w) {
-			return h;
-		}
-		if (w == h) {
-			return w;
-		}
-	}
-}
-
 function gCSE(cseId, divId, phText) {
 	// v3  
 	var placeholder = (typeof phText === 'undefined') ? "" : phText;
@@ -412,66 +371,6 @@ function gCSE(cseId, divId, phText) {
 		var s = document.getElementsByTagName('script')[0];
 		s.parentNode.insertBefore(gcse, s);
 	})();
-}
-
-function asadRespId(prefix, postfix, divId, idTxt, slot, channel, orient, divWidth, divHeight) {}
-
-function _asadRespId(prefix, postfix, divId, idTxt, slot, channel, orient, divWidth, divHeight) {
-	// v10 - bugfix
-	if (!document.getElementById(divId)) {
-		// 
-	} else {
-		var a = "";
-		if (orient == "link") {
-			a = "link"
-		};
-		if (orient == "matched") {
-			a = "autorelaxed"
-		};
-		if (orient == "a") {
-			a = "auto"
-		};
-		if (orient == "h") {
-			a = "horizontal"
-		};
-		if (orient == "v") {
-			a = "vertical"
-		};
-		if (orient == "r") {
-			a = "rectangle"
-		};
-		if (orient == "rh") {
-			a = "rectangle, horizontal"
-		};
-		if (orient == "rv") {
-			a = "rectangle, vertical"
-		};
-		var divWidth = typeof divWidth !== 'undefined' ? divWidth : '100%';
-		var divHeight = typeof divHeight !== 'undefined' ? divHeight : '100%';
-		try {
-			document.getElementById(divId).innerHTML = '' +
-				'<style type="text/css">' +
-				'.adslot_' + idTxt + ' { width: ' + divWidth + '; height:' + divHeight + '; }' +
-				'</style>' +
-				prefix +
-				'<span style="display:block;max-width:' + divWidth + ';max-height:' + divHeight + '">' +
-				' <ins class="adsbygoogle adslot_' + idTxt + '" ' +
-				' style="display:block" ' +
-				' data-ad-client="' + thsBlg_as + '" ' +
-				' data-ad-slot="' + slot + '" ' +
-				' data-ad-format="' + a + '"></ins> ' +
-				'</span>' +
-				postfix +
-				'';
-			(adsbygoogle = window.adsbygoogle || []).push({
-					params: {
-						google_ad_channel: channel
-					}
-				});
-		} catch (e) {
-			return true;
-		}
-	}
 }
 
 function insertBeforeHTMLByClass(divClass, html) {
@@ -538,10 +437,6 @@ function insertAfterHTMLByClass(divClass, html) {
 	}
 }
 
-function mapSrc(size, address, city) {
-	return 'https://maps.google.com/maps/api/staticmap?center=' + address + ' ' + city + '&amp;zoom=15&amp;size=' + size + '&amp;maptype=roadmap&amp;markers=color:red|color:red|label:C|' + address + ' ' + city + '&amp;sensor=false';
-}
-
 function limitWords(textToLimit, wordLimit) {
 	var finalText = "";
 	var text2 = textToLimit.replace(/\s+/g, ' ');
@@ -553,57 +448,6 @@ function limitWords(textToLimit, wordLimit) {
 			finalText = finalText + " " + text3[i] + " ";
 		return finalText + "...";
 	} else return textToLimit;
-}
-
-function linkify(text) {
-	/// first strip all <a 
-
-	inputText = text;
-
-	var replacedText, replacePattern1, replacePattern2, replacePattern3;
-	//URLs starting with http://, https://, or ftp://
-	replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
-	replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>');
-	//URLs starting with "www." (without // before it, or it'd re-link the ones done above).
-	replacePattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim;
-	replacedText = replacedText.replace(replacePattern2, '$1<a href="http://$2" target="_blank">$2</a>');
-	//Change email addresses to mailto:: links.
-	replacePattern3 = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim;
-	replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$1">$1</a>');
-	return replacedText;
-}
-
-function addthis_async_append(divId, customUrlTitle, url, title) {
-	// v1 , *APPENDS* TO divId, fully contained, no other code req.
-	// e.g. addthis_async('divId', 'custom','http://asdf','title'); 
-	// or addthis_async('divId', '','',''); 
-	// divId: id,  customUrlTitle: 'custom' or 'default'
-	// VARS TO SET
-	var addthis_id = 'ra-5704cac34f0de5c0';
-	//
-	var html = '<div class="addthis_toolbox addthis_32x32_style" style=" "> ' +
-		'<table><tr>' +
-		// '<td> <a rel="nofollow" class="addthis_button_facebook"></a></td>' +
-		'<td> <a rel="nofollow" class="addthis_button_twitter"></a></td>' +
-		// '<td> <a rel="nofollow" class="addthis_button_reddit"></a></td>' +
-		'<td> <a rel="nofollow" class="addthis_button_email"></a></td>' +
-		'<td> <a rel="nofollow" class="addthis_button_favorites"></a></td>' +
-		'<td> <a rel="nofollow" class="addthis_button_expanded"></a></td>' +
-		'</tr></table>' +
-		'</div>';
-	var addthis_config = addthis_config || {};
-	addthis_config.pubid = addthis_id;
-	// optional url, title, comment out to use page's
-	if (customUrlTitle == "custom") {
-		addthis_share = {
-			url: url,
-			title: title
-		}
-	}
-	var addthisScript = document.createElement('script');
-	addthisScript.setAttribute('src', '//s7.addthis.com/js/300/addthis_widget.js#domready=1');
-	document.body.appendChild(addthisScript);
-	document.getElementById(divId).insertAdjacentHTML("beforeend", html);
 }
 
 function disqusAsync(disqusId, divId) {
@@ -655,8 +499,7 @@ if (siteSection == "mainsite") {
 		///////// 
 		////////  
 		// 	
- 
- 
+
 		// itempage DTP+MOB 
 		$('.lead').after(
 			/////////// report this item link
@@ -700,11 +543,10 @@ $(function() {
 	////////////  MAINSITE(CITIES)   /////////////////////
 	if (siteSection == "mainsite") {
 		// ========= ALL BEFORE  =========
-		// $('#add-event').click(function(event) {
-		// 	event.preventDefault();
-		// 	window.open('https://spreadsheets.google.com/viewform?formkey=' + this_form, "SubmitEvent", 'width=' + winWidth + ',height=' + winHeight + ',scrollbars=yes');
-		// });
-		// 
+
+		$('body').append('<div id="add_event" style="position: fixed; bottom: 30px; right: 30px;"> <button style="background-color: #264f83; color: white; padding: 10px 20px; border-radius: 17px; font-weight: bold; font-size: large; opacity: 0.9;cursor:pointer;border:none;box-shadow: 0 0 10px black;">Add Event</button> </div>');
+ 
+ 
 		// 
 		function fdbk_openClose() {
 			if (document.getElementById('fdbk_window')) {
@@ -723,14 +565,13 @@ $(function() {
 				});
 			}
 		}
-		$("#add-event").on('click', function() {
-			ga_evCatVal('sbmtevnt', 'inf_AddEvnt_btn: N:' + this_name);
+		$("#add_event").on('click', function() {
 			fdbk_openClose();
 			// console.log('tada');
 		});
 		// 
-		$('#add-event').after(' &nbsp; &nbsp; | <a target="_blank" class="navbar-brand"  href="https://twitter.com/canadiary"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://4.bp.blogspot.com/-Mn-LDAPrbTw/VwP6Ugj64TI/AAAAAAAAAJw/O-lL69Lc9ugW5ExMI2kgqQf0YEum6v7tA/s1600/twitter.png" /></a> ' +
- 
+		$('#add_event').after(' &nbsp; &nbsp; | <a target="_blank" class="navbar-brand"  href="https://twitter.com/canadiary"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://4.bp.blogspot.com/-Mn-LDAPrbTw/VwP6Ugj64TI/AAAAAAAAAJw/O-lL69Lc9ugW5ExMI2kgqQf0YEum6v7tA/s1600/twitter.png" /></a> ' +
+
 			"");
 		$('.mainpage h1 a, .itempage h2 a ').prepend(
 			'<img id="hdimg" alt="" src="' + this_hdimg + '" />'
@@ -747,17 +588,13 @@ $(function() {
 				shortDesc = shortDesc.replace(/(?:https?|ftp):\/\/[\n\S]+/g, '');
 				shortDesc = limitWords(shortDesc, 30);
 				// console.log(shortDesc);
-				$('.featurette-heading', this).after(
-					// '<img class="featurette-image img-circle img-responsive pull-right" src="' + mapSrc('200x200', address, cd_city) + '">'
-				);
+				$('.featurette-heading', this).after();
 				$(".featurette-image", this).wrap('<a href="' + url + '"/>');
 				$(".lead", this).html(shortDesc);
 			});
 		}
 		// ========= itempage =========
-		if (ThsBlg_pg == 'itempage') {
-			// $("#addthis_rec").html(addthis_async_append("addthis_rec", "default"));
-		}
+		if (ThsBlg_pg == 'itempage') {}
 		//// both mainpage/item
 		////////////
 		//// remove our tags if they get inserted (does that in edmonton feeds!)
@@ -800,7 +637,6 @@ $(window).on("load", function() {
 			$(".featurette:eq(0)").after('<div id="loadlastdiv"></div>');
 			$('#loadlastdiv').append('<div id="disqus_thread"></div>');
 			disqusAsync('canadiary', 'disqus_thread');
-			$('#ldngPrgssBar').remove();
 			// /DTP+MOB
 		} // itempage
 	} // mainsite 

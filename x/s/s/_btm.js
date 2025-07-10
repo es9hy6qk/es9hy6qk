@@ -1,3 +1,4 @@
+//// apps.canadiary.com/x/s/s/btm.js
 // ----- x.canadiary.com btm js
 // 
 if (typeof ThsBlg_pg === 'undefined') {
@@ -314,7 +315,10 @@ function viewport(percentage, property) {
 	}
 }
 
-function amzNtv_sync(ad_mode, design, search_phrase, tracking_id, linkid, title, default_category) {
+// 2023-10-11 off
+function amzNtv_sync() {}
+
+function _amzNtv_sync(ad_mode, design, search_phrase, tracking_id, linkid, title, default_category) {
 	// v2
 	// ad_mode: "search"||"";
 	// design: "text_links"||"grid";
@@ -545,8 +549,7 @@ $(function() {
 		// ========= ALL BEFORE  =========
 
 		$('body').append('<div id="add_event" style="position: fixed; bottom: 30px; right: 30px;"> <button style="background-color: #264f83; color: white; padding: 10px 20px; border-radius: 17px; font-weight: bold; font-size: large; opacity: 0.9;cursor:pointer;border:none;box-shadow: 0 0 10px black;">Add Event</button> </div>');
- 
- 
+
 		// 
 		function fdbk_openClose() {
 			if (document.getElementById('fdbk_window')) {

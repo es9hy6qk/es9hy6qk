@@ -1,4 +1,5 @@
 //// apps.canadiary.com/x/s/s/btm.js
+
 // ----- x.canadiary.com btm js
 // 
 if (typeof ThsBlg_pg === 'undefined') {
@@ -54,7 +55,21 @@ if (siteSection == "mainsite") {
 	var cse_array = new Array('nphnqdxn9tw', 'kni0ljw18vq', 'eebc1qrbqcm', 'bzpchcdvktu', 'fg1llqeu0a4', '8jmjrsyy3hu', 'vmaklowv_o4', 'bcimmciajdq', 'gfapblwypx4', 'paj_apgjpqq', 'bcvm2atw_du', '---L---');
 	var name_array = new Array('www', 'Toronto', 'Montreal', 'Calgary', 'Ottawa', 'Edmonton', 'Mississauga', 'Winnipeg', 'Vancouver', 'Hamilton', 'QuebecCity', '---L---');
 	var prov_array = new Array('www', 'Ontario', 'Quebec', 'Alberta', 'Ontario', 'Alberta', 'Ontario', 'Manitoba', 'British Columbia', 'Ontario', 'Quebec', '---L---');
-	var hdimg_array = new Array('//3.bp.blogspot.com/_o1Mz1nvRygI/TERWzZzjrVI/AAAAAAAAABc/nxjrUxkqNjU/s1600/toronto.jpg', '//3.bp.blogspot.com/_o1Mz1nvRygI/TERWzZzjrVI/AAAAAAAAABc/nxjrUxkqNjU/s1600/toronto.jpg', '//3.bp.blogspot.com/_o1Mz1nvRygI/TERWzhGO8NI/AAAAAAAAABk/OgLnGS8_kN0/s1600/montreal.jpg', '//3.bp.blogspot.com/_o1Mz1nvRygI/TERWzzutt2I/AAAAAAAAABs/sxMZ5_QAGNg/s1600/calgary.jpg', '//4.bp.blogspot.com/_o1Mz1nvRygI/TERW0IwtIII/AAAAAAAAAB0/lXr7o-uQIpw/s1600/ottawa.jpg', '//1.bp.blogspot.com/_o1Mz1nvRygI/TERW0ky8AxI/AAAAAAAAAB8/NMZTBr_OTlg/s1600/edmonton.jpg', '//3.bp.blogspot.com/_o1Mz1nvRygI/TERXHVRLk-I/AAAAAAAAACE/OOsPSBSXsec/s1600/mississauga.jpg', '//4.bp.blogspot.com/_o1Mz1nvRygI/TERXHqjbqQI/AAAAAAAAACM/pdTjMKPCAhw/s1600/winnipeg.jpg', '//3.bp.blogspot.com/_o1Mz1nvRygI/TERXH131-uI/AAAAAAAAACU/28lGqxGUd20/s1600/vancouver.jpg', '//4.bp.blogspot.com/_o1Mz1nvRygI/TERXINo1DwI/AAAAAAAAACc/oqQzeFupZQQ/s1600/hamilton.jpg', '//1.bp.blogspot.com/_o1Mz1nvRygI/TERXIaDJxOI/AAAAAAAAACk/aU8kIEeVqiM/s1600/quebeccity.jpg', '---L---');
+
+	var hdimg_array = new Array(
+		'https://apps.canadiary.com/x/s/s/hdr/canadiary.jpg',
+		'//3.bp.blogspot.com/_o1Mz1nvRygI/TERWzZzjrVI/AAAAAAAAABc/nxjrUxkqNjU/s1600/toronto.jpg',
+		'//3.bp.blogspot.com/_o1Mz1nvRygI/TERWzhGO8NI/AAAAAAAAABk/OgLnGS8_kN0/s1600/montreal.jpg',
+		'//3.bp.blogspot.com/_o1Mz1nvRygI/TERWzzutt2I/AAAAAAAAABs/sxMZ5_QAGNg/s1600/calgary.jpg',
+		'//4.bp.blogspot.com/_o1Mz1nvRygI/TERW0IwtIII/AAAAAAAAAB0/lXr7o-uQIpw/s1600/ottawa.jpg',
+		'//1.bp.blogspot.com/_o1Mz1nvRygI/TERW0ky8AxI/AAAAAAAAAB8/NMZTBr_OTlg/s1600/edmonton.jpg',
+		'//3.bp.blogspot.com/_o1Mz1nvRygI/TERXHVRLk-I/AAAAAAAAACE/OOsPSBSXsec/s1600/mississauga.jpg',
+		'//4.bp.blogspot.com/_o1Mz1nvRygI/TERXHqjbqQI/AAAAAAAAACM/pdTjMKPCAhw/s1600/winnipeg.jpg',
+		'//3.bp.blogspot.com/_o1Mz1nvRygI/TERXH131-uI/AAAAAAAAACU/28lGqxGUd20/s1600/vancouver.jpg',
+		'//4.bp.blogspot.com/_o1Mz1nvRygI/TERXINo1DwI/AAAAAAAAACc/oqQzeFupZQQ/s1600/hamilton.jpg',
+		'//1.bp.blogspot.com/_o1Mz1nvRygI/TERXIaDJxOI/AAAAAAAAACk/aU8kIEeVqiM/s1600/quebeccity.jpg',
+		'---L---');
+
 	//mapon
 	var mapon_array = new Array('0', /*Can*/ '1', /*Tor*/ '1', /*Mon*/ '1', /*Cal*/ '1', /*Ott*/ '1', /*Edm*/ '1', /*Mis*/ '1', /*Win*/ '1', /*Van*/ '0', /*Ham*/ '1', /*Que*/ '---L---');
 	var blgtkns_array = new Array('cd_homepage', 'cd_tor', 'cd_mon', 'cd_cal', 'cd_ott', 'cd_edm', 'cd_mis', 'cd_win', 'cd_van', 'cd_ham', 'cd_que', '---L---');
@@ -491,6 +506,57 @@ if (siteSection == "mainsite") {
 	// // 
 	// ----------- MAINPAGE --------------
 	if (ThsBlg_pg == 'mainpage') {
+
+		$('.bd_5139433660953520553 h1 a').text('Canadiary — Canadian Events'); // Change 'sometext' to 'yes'
+
+		$('.bd_5139433660953520553 .container').html(`
+
+			<style>
+
+			#wwwmain  {
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+			}
+
+			#wwwmain a {
+				display: block;
+				background: #9cb2ce;
+				color: white;
+				padding: 10px 20px;
+				margin: 5px 0;
+				border-radius: 30px;
+				text-decoration: none;
+				font-size: 24px;
+			}
+
+			</style>
+
+			<div id="wwwmain" style="">
+			
+			<a href="https://toronto.canadiary.com">Toronto</a>
+			<a href="https://montreal.canadiary.com">Montreal</a>
+			<a href="https://calgary.canadiary.com">Calgary</a>
+			<a href="https://ottawa.canadiary.com">Ottawa</a>
+			<a href="https://edmonton.canadiary.com">Edmonton</a>
+			<a href="https://mississauga.canadiary.com">Mississauga</a>
+			<a href="https://winnipeg.canadiary.com">Winnipeg</a>
+			<a href="https://vancouver.canadiary.com">Vancouver</a>
+			<a href="https://hamilton.canadiary.com">Hamilton</a>
+			<a href="https://quebeccity.canadiary.com">Quebec City</a>
+
+
+			</div>
+
+
+
+
+
+
+			`);
+
 		// lu 1/2 
 		/////////////// DTP MAINPAGE 
 		if (!detectmob()) {}
@@ -573,7 +639,7 @@ $(function() {
 			// console.log('tada');
 		});
 		// 
-		$('#add_event').after(' &nbsp; &nbsp; | <a target="_blank" class="navbar-brand"  href="https://twitter.com/canadiary"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://4.bp.blogspot.com/-Mn-LDAPrbTw/VwP6Ugj64TI/AAAAAAAAAJw/O-lL69Lc9ugW5ExMI2kgqQf0YEum6v7tA/s1600/twitter.png" /></a> ' +
+		$('#add_event').after(' &nbsp; &nbsp;  <a target="_blank" class="navbar-brand"  href="https://twitter.com/canadiary"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://4.bp.blogspot.com/-Mn-LDAPrbTw/VwP6Ugj64TI/AAAAAAAAAJw/O-lL69Lc9ugW5ExMI2kgqQf0YEum6v7tA/s1600/twitter.png" /></a> ' +
 
 			"");
 		$('.mainpage h1 a, .itempage h2 a ').prepend(

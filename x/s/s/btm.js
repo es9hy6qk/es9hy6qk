@@ -507,7 +507,13 @@ if (siteSection == "mainsite") {
 	// ----------- MAINPAGE --------------
 	if (ThsBlg_pg == 'mainpage') {
 
-		$('.bd_5139433660953520553 h1 a').text('Canadiary — Canadian Events'); // Change 'sometext' to 'yes'
+		$('.bd_5139433660953520553 h1 a').html(`
+
+			<span style="font-size:24px;line-height:1em;"> 
+			<span style="font-size:120%;color:#49596f;">Canadiary</span><br><span style="color:red"> 🍁 </span> Canadian  events
+			</span>
+
+			`); // Change 'sometext' to 'yes'
 
 		$('.bd_5139433660953520553 .container').html(`
 
@@ -530,6 +536,8 @@ if (siteSection == "mainsite") {
 				border-radius: 30px;
 				text-decoration: none;
 				font-size: 24px;
+				min-width: 160px;
+				text-align: center;
 			}
 
 			</style>

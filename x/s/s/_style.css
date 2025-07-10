@@ -1,5 +1,17 @@
 /* apps.canadiary.com/x/s/s/style.css */
 
+/* www */
+
+.bd_5139433660953520553 #top_wrapper .container .mainpage,
+.bd_5139433660953520553 h2,
+.bd_5139433660953520553 footer,
+.bd_5139433660953520553 #add_event,
+.bd_5139433660953520553 .navbar-brand {
+  display: none !important;
+}
+
+/* www */
+
 nav {
   display: none;
   visibility: hidden;

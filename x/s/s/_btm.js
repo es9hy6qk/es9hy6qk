@@ -27,6 +27,7 @@ thsBlg_reportProductForm = '1FAIpQLSfMVyXMStWE7MLZVQV8rsXD7TaHRw6iwYxR4AcPwWtrNo
 //  
 // 
 ////////////  MAINSITE(CITIES)   /////////////////////
+
 if (siteSection == "mainsite") {
 	// 
 	// BDWRDS v2
@@ -298,6 +299,7 @@ if (siteSection == "mainsite") {
 // 
 // 
 // ----- /VARS
+
 function detectmob() {
 	if (window.innerWidth <= 800) {
 		return true;
@@ -491,8 +493,10 @@ function disqusAsync(disqusId, divId) {
 	check();
 }
 // 
-// 
+//
+
 ////////////  MAINSITE(CITIES)   /////////////////////
+
 if (siteSection == "mainsite") {
 	// 
 	// ========== EXEC ============
@@ -507,7 +511,15 @@ if (siteSection == "mainsite") {
 	// ----------- MAINPAGE --------------
 	if (ThsBlg_pg == 'mainpage') {
 
-		$('.bd_5139433660953520553 h1 a').text('Canadiary ‚Äî Canadian Events'); // Change 'sometext' to 'yes'
+				$('.bd_5139433660953520553 h1 a').html(
+
+					`
+
+			<span style="font-size:24px;line-height:1em;"> 
+			<span style="font-size:120%;color:#49596f;">Canadiary</span><br><span style="color:red"> ÌΩÅ </span> Canadian  events
+			</span>
+
+			`); // Change 'sometext' to 'yes'
 
 		$('.bd_5139433660953520553 .container').html(`
 
@@ -530,6 +542,8 @@ if (siteSection == "mainsite") {
 				border-radius: 30px;
 				text-decoration: none;
 				font-size: 24px;
+				min-width: 160px;
+				text-align: center;
 			}
 
 			</style>
@@ -547,13 +561,7 @@ if (siteSection == "mainsite") {
 			<a href="https://hamilton.canadiary.com">Hamilton</a>
 			<a href="https://quebeccity.canadiary.com">Quebec City</a>
 
-
 			</div>
-
-
-
-
-
 
 			`);
 
@@ -582,6 +590,7 @@ if (siteSection == "mainsite") {
 	}
 	// 
 }
+
 // 
 ////////////  /MAINSITE(CITIES)   /////////////////////
 // 
@@ -610,9 +619,29 @@ if (siteSection == "dyn_catcher") {
 // 
 // jq 
 $(function() {
+
 	////////////  MAINSITE(CITIES)   /////////////////////
+
 	if (siteSection == "mainsite") {
+
 		// ========= ALL BEFORE  =========
+
+		$('body').prepend(`
+
+<style> #affIns {background:#000; width: 100%; height: 12vh; overflow: hidden; position: relative; } #affIns a { display: block; width: 100%; height: 100%; } #affIns img { max-width: 100%; max-height: 100%; height: auto; width: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+			</style>
+
+			<div id="affIns">
+
+			<div>
+
+			<a rel="nofollow" href="https://click.linksynergy.com/fs-bin/click?id=5T%2aQVDV51p4&offerid=1562955.1101&subid=0&type=4"><IMG target="_blank" border="0" alt="Kobo Plus - Unwind with Stories" src="/rakuten.jpg" _src="https://ad.linksynergy.com/fs-bin/show?id=5T%2aQVDV51p4&bids=1562955.1101&subid=0&type=4&gridnum=0"></a>
+
+			</div>
+			<div>
+
+			`);
 
 		$('body').append('<div id="add_event" style="position: fixed; bottom: 30px; right: 30px;"> <button style="background-color: #264f83; color: white; padding: 10px 20px; border-radius: 17px; font-weight: bold; font-size: large; opacity: 0.9;cursor:pointer;border:none;box-shadow: 0 0 10px black;">Add Event</button> </div>');
 
@@ -645,6 +674,9 @@ $(function() {
 		$('.mainpage h1 a, .itempage h2 a ').prepend(
 			'<img id="hdimg" alt="" src="' + this_hdimg + '" />'
 		);
+
+		$('header').after('<div id="cd_gcse"></div>');
+
 		// 
 		// ========= mainpage =========
 		if (ThsBlg_pg == 'mainpage') {

@@ -636,7 +636,7 @@ $(function() {
 
 			<div>
 
-			<a rel="nofollow" href="https://click.linksynergy.com/fs-bin/click?id=5T%2aQVDV51p4&offerid=1562955.1101&subid=0&type=4"><IMG target="_blank" border="0" alt="Kobo Plus - Unwind with Stories" src="/rakuten.jpg" _src="https://ad.linksynergy.com/fs-bin/show?id=5T%2aQVDV51p4&bids=1562955.1101&subid=0&type=4&gridnum=0"></a>
+			<a rel="nofollow" href="https://click.linksynergy.com/fs-bin/click?id=5T%2aQVDV51p4&offerid=1562955.1101&subid=0&type=4"><IMG target="_blank" border="0" alt="Kobo Plus - Unwind with Stories" _src="/rakuten.jpg" src="https://ad.linksynergy.com/fs-bin/show?id=5T%2aQVDV51p4&bids=1562955.1101&subid=0&type=4&gridnum=0"></a>
 
 			</div>
 			<div>

@@ -442,17 +442,30 @@ function populateSearchBox() {
 
 	 </style>`);
 
-	const searchBoxHtml = `
+	var eq = "";
+	var title = "";
+
+	var q = new URLSearchParams(window.location.search).get('q');
+	if (q) {
+		eq = `value ="${q}" `;
+		title = `<p>Showing results for: <i>${q}</i></p>`;
+	}
+
+	var searchBoxHtml = `
         <div class="search-container">
             <form action="/search" method="get" class="search-form">
-                <input type="text" name="q" placeholder="Find an event in ${cd_city} " required class="search-input">
+                <input ${eq} type="text" name="q" placeholder="Find an event in ${cd_city} " required class="search-input">
                 <input type="hidden" name="by-date" value="true">
                 <button type="submit" class="search-button">Search</button>
             </form>
         </div>
+
+        ${title}
+
     `;
 
 	$('#cd_gcse').html(searchBoxHtml);
+
 }
 
 function insertBeforeHTMLByClass(divClass, html) {
@@ -790,9 +803,12 @@ $(window).on("load", function() {
 
 		//////////
 
+		// only on city pages
 		if (!/Events/.test(cd_city)) {
 			// ALL MAINSITE DTP+MOB
 			$('.container:eq(2)').prepend('<div style="width:90%;display:table;margin:10px auto;">  <div id="cd_gcse"></div>  </div>');
+
+			// cse off 2025-08-18
 			// gCSE('006235528321221562007:' + this_cse, 'cd_gcse', '');
 
 			populateSearchBox()

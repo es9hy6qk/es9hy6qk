@@ -633,11 +633,8 @@ $(function() {
 			</style>
 
 			<div id="affIns">
-
 			<div>
-
 			<a rel="nofollow" href="https://click.linksynergy.com/fs-bin/click?id=5T%2aQVDV51p4&offerid=1562955.1101&subid=0&type=4"><IMG target="_blank" border="0" alt="Kobo Plus - Unwind with Stories" _src="/rakuten.jpg" src="https://ad.linksynergy.com/fs-bin/show?id=5T%2aQVDV51p4&bids=1562955.1101&subid=0&type=4&gridnum=0"></a>
-
 			</div>
 			<div>
 
@@ -675,7 +672,7 @@ $(function() {
 			'<img id="hdimg" alt="" src="' + this_hdimg + '" />'
 		);
 
-		$('header').after('<div id="cd_gcse"></div>');
+		$('header').after('<div id="cd_gcse" style="width:99%;margin:0 auto; max-width:400px;"></div>');
 
 		// 
 		// ========= mainpage =========

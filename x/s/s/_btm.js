@@ -394,6 +394,67 @@ function gCSE(cseId, divId, phText) {
 	})();
 }
 
+function populateSearchBox() {
+
+	$('head').append(`<style>
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+	 </style>`);
+
+	const searchBoxHtml = `
+        <div class="search-container">
+            <form action="/search" method="get" class="search-form">
+                <input type="text" name="q" placeholder="Find an event in ${cd_city} " required class="search-input">
+                <input type="hidden" name="by-date" value="true">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+    `;
+
+	$('#cd_gcse').html(searchBoxHtml);
+}
+
 function insertBeforeHTMLByClass(divClass, html) {
 	if (!document.getElementsByClassName(divClass)[0]) {
 		// 
@@ -473,24 +534,26 @@ function limitWords(textToLimit, wordLimit) {
 
 function disqusAsync(disqusId, divId) {
 	// v3 - REQ JQRY
-	var ds_loaded = false;
 	try {
-		var top = $("#" + divId).offset().top;
-	} catch (e) {};
+		var ds_loaded = false;
+		try {
+			var top = $("#" + divId).offset().top;
+		} catch (e) {};
 
-	function check() {
-		if (!ds_loaded && $(window).scrollTop() + $(window).height() > top) {
-			$.ajax({
-				type: "GET",
-				url: "https://" + disqusId + ".disqus.com/embed.js",
-				dataType: "script",
-				cache: true
-			});
-			ds_loaded = true;
+		function check() {
+			if (!ds_loaded && $(window).scrollTop() + $(window).height() > top) {
+				$.ajax({
+					type: "GET",
+					url: "https://" + disqusId + ".disqus.com/embed.js",
+					dataType: "script",
+					cache: true
+				});
+				ds_loaded = true;
+			}
 		}
-	}
-	$(window).scroll(check);
-	check();
+		$(window).scroll(check);
+		check();
+	} catch (e) {}
 }
 // 
 //
@@ -511,9 +574,9 @@ if (siteSection == "mainsite") {
 	// ----------- MAINPAGE --------------
 	if (ThsBlg_pg == 'mainpage') {
 
-				$('.bd_5139433660953520553 h1 a').html(
+		$('.bd_5139433660953520553 h1 a').html(
 
-					`
+			`
 
 			<span style="font-size:24px;line-height:1em;"> 
 			<span style="font-size:120%;color:#49596f;">Canadiary</span><br><span style="color:red"> ÌΩÅ </span> Canadian  events
@@ -726,17 +789,26 @@ $(window).on("load", function() {
 		/////// ON ALL
 
 		//////////
-		// ALL MAINSITE DTP+MOB
-		$('.container:eq(2)').prepend('<div style="width:90%;display:table;margin:10px auto;">  <div id="cd_gcse"></div>  </div>');
-		gCSE('006235528321221562007:' + this_cse, 'cd_gcse', '');
+
+		if (!/Events/.test(cd_city)) {
+			// ALL MAINSITE DTP+MOB
+			$('.container:eq(2)').prepend('<div style="width:90%;display:table;margin:10px auto;">  <div id="cd_gcse"></div>  </div>');
+			// gCSE('006235528321221562007:' + this_cse, 'cd_gcse', '');
+
+			populateSearchBox()
+
+		}
+
 		// 
 		if (ThsBlg_pg == 'itempage') {
 			// rec for loadlast divs
 			$(".featurette:eq(0)").after('<div id="loadlastdiv"></div>');
 			$('#loadlastdiv').append('<div id="disqus_thread"></div>');
+
 			disqusAsync('canadiary', 'disqus_thread');
 			// /DTP+MOB
 		} // itempage
+
 	} // mainsite 
 	////////////  /MAINSITE(CITIES)   /////////////////////
 });

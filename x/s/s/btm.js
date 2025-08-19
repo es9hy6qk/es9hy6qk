@@ -417,6 +417,7 @@ function populateSearchBox() {
 }
 
 .search-input {
+	  max-width:60%;
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
@@ -428,7 +429,7 @@ function populateSearchBox() {
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
-    background-color: #007bff;
+    background-color: royalblue;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -437,7 +438,7 @@ function populateSearchBox() {
 }
 
 .search-button:hover {
-    background-color: #0056b3;
+    background-color: royalblue;
 }
 
 	 </style>`);
@@ -454,9 +455,9 @@ function populateSearchBox() {
 	var searchBoxHtml = `
         <div class="search-container">
             <form action="/search" method="get" class="search-form">
-                <input ${eq} type="text" name="q" placeholder="Find an event in ${cd_city} " required class="search-input">
+                <input ${eq} type="text" name="q" placeholder="Search ${cd_city} Events " required class="search-input">
                 <input type="hidden" name="by-date" value="true">
-                <button type="submit" class="search-button">Search</button>
+                <button type="submit" class="search-button"> &nbsp; <svg width="16" height="16" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" > <circle cx="40" cy="40" r="30" stroke="white" stroke-width="16" fill="none" /> <line x1="60" y1="60" x2="98" y2="98" stroke="white" stroke-width="16" /> </svg> &nbsp; </button>
             </form>
         </div>
 

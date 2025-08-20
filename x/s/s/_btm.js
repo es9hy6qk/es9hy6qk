@@ -300,6 +300,7 @@ if (siteSection == "mainsite") {
 // 
 // ----- /VARS
 
+
 function detectmob() {
 	if (window.innerWidth <= 800) {
 		return true;
@@ -396,52 +397,7 @@ function gCSE(cseId, divId, phText) {
 
 function populateSearchBox() {
 
-	$('head').append(`<style>
-
-.search-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px;
-}
-
-.search-form {
-    display: flex;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-}
-
-.search-input {
-	  max-width:60%;
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.search-button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: royalblue;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: background-color 0.3s;
-}
-
-.search-button:hover {
-    background-color: royalblue;
-}
-
-	 </style>`);
+	$('head').append(`<style> .search-container { display: flex; justify-content: center; align-items: center; padding: 0 10px; } .search-form { display: flex; align-items: center; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); width: 100%; max-width: 600px; } .search-input { max-width:60%; flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; } .search-button { padding: 10px 15px; border: none; border-radius: 4px; background-color: royalblue; color: white; font-size: 16px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s; } .search-button:hover { background-color: royalblue; } </style>`);
 
 	var eq = "";
 	var title = "";
@@ -466,6 +422,79 @@ function populateSearchBox() {
     `;
 
 	$('#cd_gcse').html(searchBoxHtml);
+
+}
+
+function categories() {
+
+	function a(t) {
+		return '<li><a target="_top" href="/search?q=' + t + '&by-date=true">' + t + '</a></li>';
+	}
+
+	$('head').append(`<style>
+
+		#categories li {
+		  list-style: none;
+		  margin: 0;
+		  padding: 0;
+		  text-indent: none;
+		  display: inline-block;
+		}
+
+		#categories {
+		  margin: 0 auto;
+		  max-width:580px;
+		  text-align: center;
+		}
+
+		#categories ul {
+			margin:0;
+			padding:0;
+		}
+
+		#categories a {
+		  display: table;
+		  width: fit-content; /* for chrome! */
+		  padding: 5px 10px;
+		  margin: 2px;
+		  background:#7b96b9;
+		  text-decoration: none;
+		  color:white;
+		  border-radius: 20px;
+		  text-transform: uppercase;
+		  font-size: 11px;
+		}
+
+	 </style>`);
+
+	$('header').after(`
+
+		<div id="categories">
+		<ul>
+		${a('Art')}
+		${a('Culture')}
+		${a('Food')}
+		${a('Drink')}
+		${a('Sports')}
+		${a('Recreation')}
+		${a('Family')}
+		${a('Kids')}
+		${a('Health')}
+		${a('Wellness')}
+		${a('Community')}
+		${a('Education')}
+		${a('Workshop')}
+		${a('Music')}
+		${a('Seasonal')}
+		${a('Holiday')}
+		${a('Market')}
+		${a('Fair')}
+
+		</ul>
+		</div>
+
+
+		`);
 
 }
 
@@ -572,6 +601,9 @@ function disqusAsync(disqusId, divId) {
 // 
 //
 
+/////////////////// EXEC //////////////////////
+
+
 ////////////  MAINSITE(CITIES)   /////////////////////
 
 if (siteSection == "mainsite") {
@@ -593,7 +625,7 @@ if (siteSection == "mainsite") {
 			`
 
 			<span style="font-size:24px;line-height:1em;"> 
-			<span style="font-size:120%;color:#49596f;">Canadiary</span><br><span style="color:red"> ÌΩÅ </span> Canadian  events
+			<span style="font-size:120%;color:#49596f;">Canadiary</span><br><span style="color:red">  </span> Canadian  events
 			</span>
 
 			`); // Change 'sometext' to 'yes'
@@ -703,21 +735,9 @@ $(function() {
 
 		// ========= ALL BEFORE  =========
 
-		$('body').prepend(`
+		$('body').prepend(` <style> #affIns {background:#000; width: 100%; height: 12vh; overflow: hidden; position: relative; } #affIns a { display: block; width: 100%; height: 100%; } #affIns img { max-width: 100%; max-height: 100%; height: auto; width: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } </style> <div id="affIns"> <div> <a rel="nofollow" href="https://click.linksynergy.com/fs-bin/click?id=5T%2aQVDV51p4&offerid=1562955.1101&subid=0&type=4"><IMG target="_blank" border="0" alt="Kobo Plus - Unwind with Stories" _src="/rakuten.jpg" src="https://ad.linksynergy.com/fs-bin/show?id=5T%2aQVDV51p4&bids=1562955.1101&subid=0&type=4&gridnum=0"></a> </div> <div> `);
 
-<style> #affIns {background:#000; width: 100%; height: 12vh; overflow: hidden; position: relative; } #affIns a { display: block; width: 100%; height: 100%; } #affIns img { max-width: 100%; max-height: 100%; height: auto; width: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-
-			</style>
-
-			<div id="affIns">
-			<div>
-			<a rel="nofollow" href="https://click.linksynergy.com/fs-bin/click?id=5T%2aQVDV51p4&offerid=1562955.1101&subid=0&type=4"><IMG target="_blank" border="0" alt="Kobo Plus - Unwind with Stories" _src="/rakuten.jpg" src="https://ad.linksynergy.com/fs-bin/show?id=5T%2aQVDV51p4&bids=1562955.1101&subid=0&type=4&gridnum=0"></a>
-			</div>
-			<div>
-
-			`);
-
-		$('body').append('<div id="add_event" style="position: fixed; bottom: 30px; right: 30px;"> <button style="background-color: #264f83; color: white; padding: 10px 20px; border-radius: 17px; font-weight: bold; font-size: large; opacity: 0.9;cursor:pointer;border:none;box-shadow: 0 0 10px black;">Add Event</button> </div>');
+		$('body').append('<div id="add_event" style="position: fixed; bottom: 30px; right: 30px;"> <button style="background-color: #264f83; color: white; padding: 10px 20px; border-radius: 17px; font-weight: bold; font-size: large; opacity: 0.9;cursor:pointer;border:none;box-shadow: 0 0 10px black;"><span style="font-size:120%;line-height:80%">+</span> Add Event</button> </div>');
 
 		// 
 		function fdbk_openClose() {
@@ -753,6 +773,7 @@ $(function() {
 
 		// 
 		// ========= mainpage =========
+
 		if (ThsBlg_pg == 'mainpage') {
 			//
 			$('.featurette').each(function(index) {
@@ -768,6 +789,7 @@ $(function() {
 				$(".lead", this).html(shortDesc);
 			});
 		}
+
 		// ========= itempage =========
 		if (ThsBlg_pg == 'itempage') {}
 		//// both mainpage/item
@@ -812,7 +834,9 @@ $(window).on("load", function() {
 			// cse off 2025-08-18
 			// gCSE('006235528321221562007:' + this_cse, 'cd_gcse', '');
 
-			populateSearchBox()
+			populateSearchBox();
+
+			categories();
 
 		}
 

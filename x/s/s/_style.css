@@ -25,7 +25,13 @@
   margin: 10px auto !important;
 }
 
-/* www */
+/* /www */
+
+/* cities */
+
+/* cls prevention */
+
+/* /cls prevention */
 
 nav {
   display: none;
@@ -112,3 +118,5 @@ hr {
   max-width: 580px; /* < 800: AS-AUT.-SID.RA.L */
   margin: 0 auto;
 }
+
+/* cities */

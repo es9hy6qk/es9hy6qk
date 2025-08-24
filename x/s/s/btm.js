@@ -618,7 +618,8 @@ if (siteSection == "mainsite") {
 
 		// ========= CITY MAIN+ITEM BEFORE  =========
 
-		$('body').prepend(` <style> #affIns {background:#000; width: 100%; height: 12vh; overflow: hidden; position: relative; } #affIns a { display: block; width: 100%; height: 100%; } #affIns img { max-width: 100%; max-height: 100%; height: auto; width: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } </style> <div id="affIns"> <div> <a rel="nofollow" href="https://click.linksynergy.com/fs-bin/click?id=5T%2aQVDV51p4&offerid=1562955.1101&subid=0&type=4"><IMG target="_blank" border="0" alt="Kobo Plus - Unwind with Stories" _src="/rakuten.jpg" src="https://ad.linksynergy.com/fs-bin/show?id=5T%2aQVDV51p4&bids=1562955.1101&subid=0&type=4&gridnum=0"></a> </div> <div> `);
+		// 2025-08-24 off
+		// $('body').prepend(` <style> #affIns {background:#000; width: 100%; height: 12vh; overflow: hidden; position: relative; } #affIns a { display: block; width: 100%; height: 100%; } #affIns img { max-width: 100%; max-height: 100%; height: auto; width: auto; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); } </style> <div id="affIns"> <div> <a rel="nofollow" href="https://click.linksynergy.com/fs-bin/click?id=5T%2aQVDV51p4&offerid=1562955.1101&subid=0&type=4"><IMG target="_blank" border="0" alt="Kobo Plus - Unwind with Stories" _src="/rakuten.jpg" src="https://ad.linksynergy.com/fs-bin/show?id=5T%2aQVDV51p4&bids=1562955.1101&subid=0&type=4&gridnum=0"></a> </div> <div> `);
 
 		$('body').append('<div id="add_event" style="position: fixed; bottom: 30px; right: 30px;"> <button style="background-color: #264f83; color: white; padding: 10px 20px; border-radius: 17px; font-weight: bold; font-size: large; opacity: 0.9;cursor:pointer;border:none;box-shadow: 0 0 10px black;"><span style="font-size:120%;line-height:80%">+</span> Add Event</button> </div>');
 

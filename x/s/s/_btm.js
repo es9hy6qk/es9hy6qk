@@ -313,8 +313,6 @@ function disqusAsync(disqusId, divId) {
 	} catch (e) {}
 }
 
-//////////////////// EXEC //////////////////////
-
 if (siteSection == "mainsite") {
 
 	thsBlg_amz = {
@@ -598,7 +596,7 @@ if (siteSection == "mainsite") {
 	};
 	// 
 
-	////////////////// 
+	////////////////// MAIN EXEC /////////////
 
 	if (subDom == "www") {
 
@@ -650,9 +648,12 @@ if (siteSection == "mainsite") {
 		$('#add_event').after(' &nbsp; &nbsp;  <a target="_blank" class="navbar-brand"  href="https://twitter.com/canadiary"><img style="background:#eee;border:solid 2px #eee;height:1em;display:inline-block;vertical-align:middle;" src="https://4.bp.blogspot.com/-Mn-LDAPrbTw/VwP6Ugj64TI/AAAAAAAAAJw/O-lL69Lc9ugW5ExMI2kgqQf0YEum6v7tA/s1600/twitter.png" /></a> ' +
 
 			"");
+
 		$('.mainpage h1 a, .itempage h2 a ').prepend(
 			'<img id="hdimg" alt="" src="' + this_hdimg + '" />'
 		);
+
+		$('.mainpage h1, .itempage h2').before('<div style="position:relative"><a href="https://www.canadiary.com/" style="display: block; background: #666; position: absolute; right: 0; color: white; padding: 4px 8px; font-size: 13px; text-decoration: none; margin: 5px; border-radius: 30px;box-shadow: 0 0 5px #555;opacity:0.9">MORE CITIES</a></div>')
 
 		$('header').after('<div id="cd_gcse" style="width:99%;margin:0 auto; max-width:400px;"></div>');
 

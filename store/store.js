@@ -13,7 +13,7 @@ thsBlg_amz = {
 	'de': 'cndrde-21',
 	'fr': 'cndrfr-21',
 	'it': 'cndrit-21',
-	'es': 'cndres-21'
+	'es': 'cndres-21',
 	'def_kw': 'canada',
 	'def_kw_2': 'canada',
 	'def_cat': 'All',

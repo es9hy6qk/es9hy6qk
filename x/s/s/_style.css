@@ -100,6 +100,13 @@ hr {
   margin-right: 10px;
 }
 
+.headline .mainpage h2 {
+  text-align: center;
+  margin: 20px 0 !important;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .headline h3 {
   font-size: medium;
 }

@@ -5,8 +5,6 @@
 
 // -------- CD ONLY VARS ---------
 
-alert('hello')
-
 thsBlg_dom = "store.canadiary.com";
 thsBlg_amz = {
 	'com': 'cndr-20',

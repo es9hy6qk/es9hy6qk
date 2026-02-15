@@ -5,15 +5,15 @@
 html {
   --main-font-family: Roboto, Arial, sans-serif;
   --headline-font-family: "Roboto Condensed", sans-serif;
-  --logoheader-color: #202080;
-  --panel-background-color: #d2cfff;
+  --logoheader-color: #558bd3;
+  --panel-background-color: #b6cbe6;
   --logoheader-links-color: white;
   --text-color: black;
   --link-color: black;
   --button-background-color: #3a399c;
   --button-text-color: white;
   --report-text-color: #555;
-  --pager-background-color: #da941d;
+  --pager-background-color: red;
   --pager-link-color: white;
   --label-link-color: black;
   --label-background-color: #82df80;
